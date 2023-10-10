@@ -4,6 +4,7 @@ var cartas = document.querySelectorAll('.tarjeta');
 
 var counter =0;
 var tarjetaCount =0;
+var arrAdivinadas = [];
 var dirImages = ['images/Luffy.jpg', 'images/zoro.jpg', 'images/Nami.jpg', 
 'images/ussopp.jpg', 'images/sanji.jpg',' images/robin.png', 'images/chopper.jpg',
 'images/franky.jpg', 'images/brook.jpg', 'images/jinbe.jpg','images/Luffy.jpg', 'images/zoro.jpg', 'images/Nami.jpg', 
@@ -87,6 +88,11 @@ boton.addEventListener('click', function(){
                     carta2.classList.replace('flipped', 'locked');
                     arrVolteadas.pop();
                     arrVolteadas.pop();
+                    arrAdivinadas.push(carta1);
+                    arrAdivinadas.push(carta2);
+                    if(arrAdivinadas.length==20){
+                        alert('ganaste!!!');
+                    }
                 }
                 else{
     
@@ -105,11 +111,13 @@ boton.addEventListener('click', function(){
                     arrVolteadas.pop();
     
                 }
-                //eliminar del arreglo las ids
+  
                 counter -=2;
+
 
             }
         }, 2000);
+
         
 
         
