@@ -32,7 +32,7 @@ boton.addEventListener('click', function(){
     for (let i = 0; i < 5; i++) {
         var div = document.createElement('div');
         div.classList.add('row');
-        console.log('cree el primer div');
+
         for(let j=0; j< 4; j++){
             var tarjeta = document.createElement('div');
             tarjeta.id = tarjetaCount;
@@ -46,10 +46,9 @@ boton.addEventListener('click', function(){
 
             tarjeta.appendChild(img);
             div.appendChild(tarjeta);
-            console.log('cree una tarjeta')
         }
         board.appendChild(div);
-        console.log('lo logre pa')
+
         
     }
 
@@ -65,7 +64,6 @@ boton.addEventListener('click', function(){
                     carta.removeChild(carta.firstChild);
                     var img = document.createElement("img");
                     img.src = dirImages[carta.id] ;
-                    console.log(dirImages[carta.id]);
     
                     carta.appendChild(img);
                     //guardar en el arreglo el id de la tarjeta volteada
@@ -84,7 +82,6 @@ boton.addEventListener('click', function(){
                 var carta2 = document.getElementById(arrVolteadas[1]);
                 //checamos si son iguales
                 if (dirImages[arrVolteadas[0]]  === dirImages[arrVolteadas[1] ] ) {
-                    console.log('son iguales');
     
                     carta1.classList.replace('flipped', 'locked');
                     carta2.classList.replace('flipped', 'locked');
@@ -110,7 +107,7 @@ boton.addEventListener('click', function(){
                 }
                 //eliminar del arreglo las ids
                 counter -=2;
-                console.log(counter);
+
             }
         }, 2000);
         
